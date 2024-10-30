@@ -2,12 +2,12 @@
 layout: about
 title: about
 permalink: /
-subtitle: C<a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: Computer Science PhD student at Corell Tech<
 
 profile:
-  align: right
+  align: left
   image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
+  image_circular: true # crops the image to make it circular
   more_info: >
 
 news: true # includes a list of news items
