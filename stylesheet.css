@@ -102,7 +102,7 @@ h2 {
 .papertitle {
   font-family: var(--bs-font-sans-serif) !important;
   font-size: 19px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .name {
