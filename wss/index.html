@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Why So Serious? Exploring Humor in AAC Through AI-Powered Interfaces</title>
+
+    <meta name="description" content="People with speech disabilities may use speech generating devices to facilitate their speech, aka Augmentative and Alternative Communication (AAC) technology. This technology enables practical conversation; however it remains challenging to deliver expressive and timely comments. In this paper, we study how AAC technology can facilitate such speech, through AI powered interfaces. We focus on the least predictable and most high-paced type: humorous comments.
+    We conducted seven qualitative interviews with people with speech disabilities, and performed thematic analysis to gain in-depth insights in usage and challenges of AAC technology, and the role humor plays for them. We designed four simple AI powered interfaces to create humorous comments. In a user study with five participants with speech disabilities, these interfaces allowed us to study how to best support making well-timed humorous comments. We conclude with a discussion of recommendations for interface design based on both studies.
+                    " >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:image" content="">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1296">
+    <meta property="og:image:height" content="840">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="/whysoserious/"/>
+    <meta property="og:title" content="Why So Serious? Exploring Humor in AAC Through AI-Powered Interfaces" />
+    <meta property="og:description" content="People with speech disabilities may use speech generating devices to facilitate their speech, aka Augmentative and Alternative Communication (AAC) technology. This technology enables practical conversation; however it remains challenging to deliver expressive and timely comments. In this paper, we study how AAC technology can facilitate such speech, through AI powered interfaces. We focus on the least predictable and most high-paced type: humorous comments.
+    We conducted seven qualitative interviews with people with speech disabilities, and performed thematic analysis to gain in-depth insights in usage and challenges of AAC technology, and the role humor plays for them. We designed four simple AI powered interfaces to create humorous comments. In a user study with five participants with speech disabilities, these interfaces allowed us to study how to best support making well-timed humorous comments. We conclude with a discussion of recommendations for interface design based on both studies.
+                    " />
+
+    
+
+
+<!-- <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22></text></svg>"> -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                <b>Why So Serious? Exploring Humor in AAC Through AI-Powered Interfaces</br> 
+                <small>
+								CHI 2025 (In submission)
+                </small>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://tobiwg.com/">
+                          Tobias Weinberg
+                        </a>
+                        </br>Cornell Tech
+                    </li>
+                    <li>
+                        <a href="https://kadomak.github.io/">
+                            Kowe Kadoma
+                        </a>
+                        </br>Cornell Tech
+                    </li>
+                    <li>
+                        <a href="https://rgonzalezp.github.io/">
+                            Ricardo E. Gonzalez Penuela
+                        </a>
+                        </br>Cornell Tech
+                    </li>
+                    <li>
+                        <a href="https://stephanie-valencia.com/">
+                            Stephanie Valencia
+                        </a>
+                        </br>University of Maryland
+                    </li>
+                    <li>
+                        <a href="https://thijsroumen.eu/">
+                            Thijs Roumen
+                        </a>
+                        </br>Cornell Tech
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <a href="https://arxiv.org/abs/2410.16634">
+                            <image src="img/paper_image.png" height="60px">
+                                <h4><strong>Paper</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://youtu.be/V988iW59Y44?si=O4hlZslKftOuSNAE">
+                            <image src="img/youtube_icon.png" height="60px">
+                                <h4><strong>Video</strong></h4>
+                            </a>
+                        </li>
+                       
+                        <!-- <li>
+                            <a href="https://github.com/google-research/multinerf">
+                            <image src="img/github.png" height="60px">
+                                <h4><strong>Code</strong></h4>
+                            </a>
+                        </li> -->
+                    </ul>
+                </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                
+                <img id="" width="100%" src="img/figone.png"/>
+						</div>
+            <div class="col-md-8 col-md-offset-2">
+							<p class="text-justify">
+                                We explore the role of humor in Augmentative and Alternative Communication (AAC) and how to design interfaces to support timely humorous expressions. (a)~Here an AAC user tries to make a joke in an ongoing conversation. (b)~as the conversation continues, the user frantically tries to type the joke (c)~unfortunately they trigger text-to-speech (TTS) too late to effectively land the joke causing confusion (d)~we explore how to design interfaces to speed up the response through AI powered tools, while minimizing the cost of agency. (e)~Leading to design that allows AAC users to meaningfully express themselves through humor in ongoing conversations. Note: AAC input types and interfaces vary widely across users. One of our authors is an AAC user who commonly interacts with his phone as displayed here. Only for illustration purposes. Our actual interfaces were used on a range of devices in our studies.
+							</p>
+						</div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+                    People with speech disabilities may use speech generating devices to facilitate their speech, aka Augmentative and Alternative Communication (AAC) technology. This technology enables practical conversation; however it remains challenging to deliver expressive and timely comments. In this paper, we study how AAC technology can facilitate such speech, through AI powered interfaces. We focus on the least predictable and most high-paced type: humorous comments.
+We conducted seven qualitative interviews with people with speech disabilities, and performed thematic analysis to gain in-depth insights in usage and challenges of AAC technology, and the role humor plays for them. We designed four simple AI powered interfaces to create humorous comments. In a user study with five participants with speech disabilities, these interfaces allowed us to study how to best support making well-timed humorous comments. We conclude with a discussion of recommendations for interface design based on both studies.
+                </p>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Video
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:56.25%;">
+                        <iframe src="https://www.youtube.com/embed/V988iW59Y44?si=xi3M5_Bdltvp1Xrb" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Demo
+                </h3>
+                <ul class="nav nav-pills nav-justified">
+                    <li>
+                        <a href="https://interface1-two.vercel.app/">
+                        <image width="150px" src="img/i1.png">
+                            <h4><strong>Interface 1 <br>(bubbles)</strong></h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://interface2-eta.vercel.app/">
+                        <image src="img/i2.png" width="150px">
+                            <h4><strong>Interface 2<br> (keywords)</strong></h4>
+                        </a>
+                    </li>
+                   
+                    <li>
+                        <a href="https://interface3.vercel.app/">
+                        <image src="img/i3.png" width="150px">
+                            <h4><strong>Interface 3<br> (wizard-style)</strong></h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href=" https://fullauto-tobiwgs-projects.vercel.app/ 
+                        ">
+                        <image src="img/i4.png" width="150px">
+                            <h4><strong>Interface 4 <br>full-auto)</strong></h4>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+    </div>
+
+
+            
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Citation
+                </h3>
+                <div class="form-group col-md-10 col-md-offset-1">
+                    <div style=" background-color: #f1f1f1;">
+                        <code style="font-family: Consolas,'courier new';
+                        background-color: #f1f1f1;
+                        color: black;
+                        padding: 2px;
+                        ">
+                            @article{weinberg2024whysoserious,<br>
+                                title={Why So Serious? Exploring Humor in AAC Through AI-Powered Interfaces},<br>
+                                author={Weinberg, Tobias and Kadoma, Kowe and Penuela, Ricardo E Gonzalez and Valencia, Stephanie and Roumen, Thijs},<br>
+                                journal={arXiv preprint arXiv:2410.16634},<br>
+                                year={2024}<br>
+                            }
+                        </code>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Acknowledgements
+                </h3>
+                <p class="text-justify">
+                Thanks to Zekai Shen, Samee Chandra and Maria Tane for helping in the develpment of the prototypes and Roy Zunder for helping analysing the data and wrinting. thank you guys we coulnt have done without you!
+                <br>
+                The website template was borrowed from <a href="http://mgharbi.com/">Michaël Gharbi</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
