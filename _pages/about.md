@@ -5,7 +5,7 @@ permalink: /
 subtitle: Computer Science PhD student at Corell Tech
 
 profile:
-  align: left
+  align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
