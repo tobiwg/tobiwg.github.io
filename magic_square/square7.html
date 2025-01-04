@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic Square</title>
+    <style>
+        @media (min-width: 1000px) {
+            body{ grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 400px) {
+            .explanation{
+
+                max-width: 100vw;
+            }
+            #game-container {
+                max-width: 100vw;
+            }
+    }
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: grid;
+           
+            align-items: center;
+            /* The image used */
+            background-image: url("background2.jpeg");
+
+            /* Full height */
+            height: 100%; 
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .explanation{
+            
+            max-width: 400px;
+            justify-self: center;
+            margin-top: 80px;
+            /* From https://css.glass */
+            background: rgba(255, 255, 255, 0.579);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 10px;
+            color: #4e4e4e;
+        }
+
+        #game-container {
+            display: grid;
+            grid-template-columns: repeat(7, 57px);
+            justify-self: center;
+            margin-top: 80px;
+            margin-bottom: 80px;
+            max-width: 400px;
+            /* From https://css.glass */
+            background: rgba(255, 255, 255, 0.579);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 10px;
+            border-radius: 16px;
+        }
+
+        .cell {
+            
+            display: grid;
+            height: 55px;
+            padding: 1px;
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            border-color: #fff;
+            
+        }
+
+        .cell:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        input {
+           
+            width:53px;
+            height: 53px;
+            text-align: center;
+            font-size: 20px;
+            margin: 1px;
+            color: #4e4e4e;
+            background: rgba(255, 255, 255, 0.2) !important;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 1px !important;
+            border-radius: 0px !important;
+        }
+        input:disabled{
+            opacity: 1;
+        }
+
+        .sum-label {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            font-size: 16px;
+            font-weight: bold;
+            color: #2ecc71;
+        }
+
+        #toggle-button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #2ecc71;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+
+        #sums {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .link{
+            background: rgba(255, 255, 255, 0.579);
+            position: absolute;
+            top: 0;
+            width: 100vw;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 10px;
+            border-radius: 16px;   
+            text-decoration: none !important;
+            color: #4e4e4e !important;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="link">The Secret of Happiness</a>
+    
+    <div class="explanation">
+        <h2>Four Keys to Happiness</h2>
+        <p>
+            Find the center number and put it in the middle. Without the middle number in the right place, the result would never come out right. The center number represents who we are and the balance point. Balance is love.<br><br>
+            Always go from upper left to lower right. Tao cultivation is to cultivate humility with joy.
+            The joy of giving.<br><br>
+            When the lower right is out of bound, go to the other direction. Reverse thinking.<br><br>
+            On multiples of 5, elevate to the next level up and the last number is upward to the Heaven. Be courageously learn to transcend oneself.
+        </p>
+    </div>
+    <div id="game-container">
+        
+    </div>
+   
+
+    <script>
+        let gridSize = 7;
+        var matrix7=[[0,0,0,49,0,0,0], [0,0,0,0,0,0,0],[0,0,0,0,0,0,0], [0,0,0,25,0,0,0], [0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,1,0,0,0]];
+         // Function to generate an empty array of given size
+         function generateEmptyArray(size) {
+            return Array.from({ length: size }, () => Array(size).fill(''));
+        }
+        function search_number(num){
+            for(var i=0; i<gridSize;i++){
+                for(var j=0; j<gridSize;j++){
+                    if(num==matrix7[i][j]){
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+        function win(){
+            var sums_rows=[0,0,0,0,0,0,0];
+            var sum_columns=[0,0,0,0,0,0,0];
+            var diag1=0
+            var diag2=0
+            console.log(matrix7[0][0])
+            for(var i=0; i<gridSize;i++){
+                for(var j=0; j<gridSize;j++){
+                    sums_rows[i]+=parseInt(matrix7[j][i]);
+                    sum_columns[i]+=parseInt(matrix7[i][j]);
+                    
+                }
+                diag1+=parseInt(matrix7[i][i]);
+                    diag2+=parseInt(matrix7[i][6-i]);
+            }
+            for(var i=0;i<gridSize;i++){
+                if(sums_rows[i]!=175 || sum_columns[i]!=175|| diag1!=175 && diag2!=175){
+                    console.log(sums_rows);
+                    console.log(sum_columns);
+                    console.log(diag1);
+                    console.log(diag2);
+                    return false
+                }
+            }
+            return true
+        }
+        
+        // Function to render the array on the webpage
+        function renderArray(array) {
+            const gameContainer = document.getElementById('game-container');
+            gameContainer.innerHTML = '';
+
+            array.forEach((row, rowIndex) => {
+                row.forEach((cellValue, colIndex) => {
+                    const cell = document.createElement('div');
+                    cell.className = 'cell';
+                    const input = document.createElement('input');
+                    input.type = 'text';
+                    input.value = '';
+                    if(gridSize==7){
+                        if(matrix7[rowIndex][colIndex]!=0){
+                            input.value=matrix7[rowIndex][colIndex];
+                            input.disabled=true;
+                            
+                        }
+                    }
+                    input.addEventListener('keydown', (event) =>{
+                        event.target.value=event.target.value.replace(/[^\d]/,'');
+
+                        
+                    });
+                    input.addEventListener('change', (event) => {
+                        
+                        if(gridSize==7 && event.target.value>=49){
+                            alert("You can only input numbers up to 49")
+                        }else{
+                            if(search_number(event.target.value)){
+                                alert("You alreay use that number");
+                                console.log(matrix7);
+                                event.target.value=''
+                            }else{
+                                matrix7[rowIndex][colIndex] = event.target.value;
+                                if(win()){
+                                    alert("Congratulations!!")
+                                }
+                            }
+                        }
+                    });
+                    cell.appendChild(input);
+                    gameContainer.appendChild(cell);
+                });
+            });
+
+        }
+       
+         // Call the function to generate, render, and display sums for the initial array
+        const magicSquare = generateEmptyArray(gridSize);
+        renderArray(magicSquare);
+       
+    </script>
+</body>
+</html>
