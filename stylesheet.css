@@ -91,7 +91,9 @@ strong {
   font-family: var(--bs-font-sans-serif) !important;
   font-size: 14px;
 }
-
+p{
+  margin-bottom: 0.5rem;
+}
 h2 {
   margin: 0;
   font-weight: normal;
