@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Why So Serious? Exploring Humor in AAC Through AI-Powered Interfaces</title>
+
+    <meta name="description" content="People with speech disabilities may use speech generating devices to facilitate their speech, aka Augmentative and Alternative Communication (AAC) technology. This technology enables practical conversation; however it remains challenging to deliver expressive and timely comments. In this paper, we study how AAC technology can facilitate such speech, through AI powered interfaces. We focus on the least predictable and most high-paced type: humorous comments.
+    We conducted seven qualitative interviews with people with speech disabilities, and performed thematic analysis to gain in-depth insights in usage and challenges of AAC technology, and the role humor plays for them. We designed four simple AI powered interfaces to create humorous comments. In a user study with five participants with speech disabilities, these interfaces allowed us to study how to best support making well-timed humorous comments. We conclude with a discussion of recommendations for interface design based on both studies.
+                    " >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:image" content="">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1296">
+    <meta property="og:image:height" content="840">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="/whysoserious/"/>
+    <meta property="og:title" content="Why So Serious? Exploring Humor in AAC Through AI-Powered Interfaces" />
+    <meta property="og:description" content="People with speech disabilities may use speech generating devices to facilitate their speech, aka Augmentative and Alternative Communication (AAC) technology. This technology enables practical conversation; however it remains challenging to deliver expressive and timely comments. In this paper, we study how AAC technology can facilitate such speech, through AI powered interfaces. We focus on the least predictable and most high-paced type: humorous comments.
+    We conducted seven qualitative interviews with people with speech disabilities, and performed thematic analysis to gain in-depth insights in usage and challenges of AAC technology, and the role humor plays for them. We designed four simple AI powered interfaces to create humorous comments. In a user study with five participants with speech disabilities, these interfaces allowed us to study how to best support making well-timed humorous comments. We conclude with a discussion of recommendations for interface design based on both studies.
+                    " />
+    <link rel="shortcut icon" href="../images/favicon/favicon.ico" type="image/x-icon"/>
+    
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                <b>One Does Not Simply ‘Mm-hmm’: Exploring Backchanneling in the AAC Micro-Culture</br> 
+                <small>
+								
+                </small>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://tobiwg.github.io/">
+                          Tobias Weinberg
+                        </a>
+                        </br>Cornell Tech
+                    </li>
+                    <li>
+                        <a href="https://ischool.umd.edu/directory/claire-oconnor/">
+                            Claire O'Connor
+                        </a>
+                        </br>University of Maryland
+                    </li>
+                    <li>
+                        <a href="https://rgonzalezp.github.io/">
+                            Ricardo E. Gonzalez Penuela
+                        </a>
+                        </br>Cornell Tech
+                    </li>
+                    <li>
+                        <a href="https://stephanie-valencia.com/">
+                            Stephanie Valencia
+                        </a>
+                        </br>University of Maryland
+                    </li>
+                    <li>
+                        <a href="https://thijsroumen.eu/">
+                            Thijs Roumen
+                        </a>
+                        </br>Cornell Tech
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- <div class="row">
+            <div class="col-md-12 text-center">
+                
+                    <strong><em>CHI</em> 2025 - Best Paper Honorable Mention Award (best 5%) 🏅</strong> <br>
+                    <strong><em>CHI</em> 2025 - Jury Best Demo Award 🏆</strong> 
+                
+            </div>
+        </div> -->
+
+        <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center">
+                    <ul class="nav nav-pills nav-fill">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                            <image src="img/paper_image.png" height="60px">
+                                <h4><strong>Paper</strong></h4>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://youtu.be/necE08bTZdM">
+                            <image src="img/youtube_icon.png" height="60px">
+                                <h4><strong>Video</strong></h4>
+                            </a>
+                        </li>
+                       
+                        <!-- <li class="nav-item">
+                            <a class="nav-link"  href="#demo">
+                            <image src="img/demo.webp" height="60px">
+                                <h4><strong>Demo</strong></h4>
+                            </a>
+                        </li>  -->
+                    </ul>
+                </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                
+                <img id="" width="100%" src="img/figone.png"/>
+						</div>
+            <div class="col-md-8 col-md-offset-2">
+							<p class="text-justify">
+                                Fig. 1: A conversation between two AAC users. We find that backchanneling (active-listening) plays a crucial role in communication. However, here to enter text, both users engage with their devices, missing out on non-verbal cues from their interlocutor. We identify a need for better support of backchanneling for AAC, while respecting their established micro-culture.  
+							</p>
+						</div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+                    Backchanneling (e.g., "uh-huh", "hmm", a simple nod) encompasses a big part of everyday communication; it is how we negotiate the turn to speak, it signals our engagement, and shapes the flow of our conversations. For people with speech and motor impairments, backchanneling is limited to a reduced set of modalities, and their Augmentative and Alternative Communication (AAC) technology requires visual attention, making it harder to observe non-verbal cues of conversation partners. We explore how users of AAC technology approach backchanneling and create their own unique channels and communication culture. We conducted a workshop with 4 AAC users to understand the unique characteristics of backchanneling in AAC. We explored how backchanneling changes when pairs of AAC users communicate vs when an AAC user communicates with a non-AAC user. We contextualize these findings through four in-depth interviews with speech-language pathologists (SLPs). We conclude with a discussion about backchanneling as a micro‑cultural practice, rethinking embodiment and mediation in AAC technology, and providing design recommendations for timely multi-modal backchanneling while respecting different communication cultures.
+                </p>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Video
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:56.25%;">
+                        <iframe src="https://www.youtube.com/embed/necE08bTZdM?si=5EvaZYGcb5INmsx-" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+            
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Citation
+                </h3>
+                <!-- <div class="form-group col-md-12 ">
+                    <div style=" background-color: #f1f1f1;">
+                        <code style="font-family: Consolas,'courier new';
+                        background-color: #f1f1f1;
+                        color: black;
+                        padding: 2px;
+                        ">
+                            @inproceedings{weinberg2025whysoserious, <br>
+                                author = {Weinberg, Tobias M and Kadoma, Kowe and Gonzalez Penuela, Ricardo E. and Valencia, Stephanie and Roumen, Thijs},<br>
+                                title = {Why So Serious? Exploring Timely Humorous Comments in AAC Through AI-Powered Interfaces},<br>
+                                year = {2025},<br>
+                                url = {https://doi.org/10.1145/3706598.3714102},<br>
+                                doi = {10.1145/3706598.3714102},<br>
+                                booktitle = {Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems},<br>
+                                articleno = {759},<br>
+                                numpages = {19}, <br>
+                                series = {CHI '25}<br>
+                                }
+                        </code>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Acknowledgements
+                </h3>
+                <p class="text-justify">
+                    We extend our sincere gratitude to YAI (Young Adult Institute) for providing the space and facilities that enabled this research. We are especially thankful to Judith Baley-Hung, BIS Coordinator and Supervisor of the Center for Engagement and Innovation at YAI, for her mentorship and support throughout the project. We also thank Julia Shulman for connecting us with a generous and insightful network of speech-language pathologists. This work was supported by the Siegel Public Interest Technology Impact Fellowship (PiTech), whose funding made this research possible.<br><br>
+                The website template was borrowed from <a href="http://mgharbi.com/">Michaël Gharbi</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
