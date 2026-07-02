@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Me, Myself, and My Voice: Exploring Cultural and Linguistic Identity in AAC AI-generated Voices</title>
+
+    <meta name="description" content="Voice is a central element of identity. We recognize people by their voice, and we uniquely express who we are with it. For people who rely on augmentative and alternative communication~(AAC) systems, such as speech-generating devices~(SGD), the device's voice becomes an identity marker others associate with them. Yet, it is hard to find a voice that truly aligns with one's identity both linguistically and culturally. Although modern AI-generated voices can reproduce diverse accents and speaking styles, AAC users still lack accessible ways to articulate how they want an identity-aligned voice to sound like. We first conducted a survey of AAC users (across eight countries) to characterize current voice representation, finding that non-binary, transgender, and non-US-born respondents rated their current voice support identity alignment consistently lower than other respondents. To examine how AAC users respond to voices designed to reflect their cultural identity, we built a tool that elicits cultural markers through guided questions and generates personalized voice candidates for participants to hear and reflect on. After participants heard the voices, we interviewed them to examine what it means for a voice to feel culturally representative, how they interpreted voices with cultural connotations, and how these voices shaped their sense of identity and agency. Our findings show that cultural voice alignment runs deeper than accent or language alone; it touches on belonging, self-recognition, and what it means to be heard as who you are." >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:image" content="">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1296">
+    <meta property="og:image:height" content="840">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="/Me, Myself, and My Voice/"/>
+    <meta property="og:title" content="Voice is a central element of identity. We recognize people by their voice, and we uniquely express who we are with it. For people who rely on augmentative and alternative communication~(AAC) systems, such as speech-generating devices~(SGD), the device's voice becomes an identity marker others associate with them. Yet, it is hard to find a voice that truly aligns with one's identity both linguistically and culturally. Although modern AI-generated voices can reproduce diverse accents and speaking styles, AAC users still lack accessible ways to articulate how they want an identity-aligned voice to sound like. We first conducted a survey of AAC users (across eight countries) to characterize current voice representation, finding that non-binary, transgender, and non-US-born respondents rated their current voice support identity alignment consistently lower than other respondents. To examine how AAC users respond to voices designed to reflect their cultural identity, we built a tool that elicits cultural markers through guided questions and generates personalized voice candidates for participants to hear and reflect on. After participants heard the voices, we interviewed them to examine what it means for a voice to feel culturally representative, how they interpreted voices with cultural connotations, and how these voices shaped their sense of identity and agency. Our findings show that cultural voice alignment runs deeper than accent or language alone; it touches on belonging, self-recognition, and what it means to be heard as who you are." />
+    <link rel="shortcut icon" href="../images/favicon/favicon.ico" type="image/x-icon"/>
+    
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                <b>Me, Myself, and My Voice: Exploring Cultural and Linguistic Identity in AAC AI-generated Voices</br> 
+                <small>
+								
+                </small>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://tobiwg.github.io/">
+                          Tobias Weinberg
+                        </a>
+                        </br>Cornell Tech
+                    </li>
+                    <li>
+                        <a href="https://aaleyahlewis.github.io/">
+                            Aaleyah Lewis
+                        </a>
+                        </br>University of Washington
+                    </li>
+                    <li>
+                        <a href="https://rgonzalezp.github.io/">
+                            Ricardo E. Gonzalez Penuela
+                        </a>
+                        </br>Cornell Tech
+                    </li>
+                    <li>
+                        <a href="">
+                            Weicong Hong
+                        </a>
+                        </br>Cornell Tech
+                    </li>
+                    <li>
+                        <a href="https://make4all.org/portfolio/jennifer-mankoff/">
+                            Jennifer Mankoff
+                        </a>
+                        </br>University of Washington
+                    </li>
+                    <li>
+                        <a href="https://thijsroumen.eu/">
+                            Thijs Roumen
+                        </a>
+                        </br>Cornell Tech
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- <div class="row">
+            <div class="col-md-12 text-center">
+                
+                    <strong><em>CHI</em> 2025 - Best Paper Honorable Mention Award (best 5%) 🏅</strong> <br>
+                    <strong><em>CHI</em> 2025 - Jury Best Demo Award 🏆</strong> 
+                
+            </div>
+        </div> -->
+
+        <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center">
+                    <ul class="nav nav-pills nav-fill">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://arxiv.org/abs/2605.24337">
+                            <image src="img/paper_image.png" height="60px">
+                                <h4><strong>Paper</strong></h4>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">
+                            <image src="img/youtube_icon.png" height="60px">
+                                <h4><strong>Video (coming soon)</strong></h4>
+                            </a>
+                        </li>
+                       
+                        <!-- <li class="nav-item">
+                            <a class="nav-link"  href="#demo">
+                            <image src="img/demo.webp" height="60px">
+                                <h4><strong>Demo</strong></h4>
+                            </a>
+                        </li>  -->
+                    </ul>
+                </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                
+                <img id="" width="100%" src="img/figone.png"/>
+						</div>
+            <div class="col-md-8 col-md-offset-2">
+							<p class="text-justify">
+                                Fig. 1:We explore cultural identity in AAC voice generation, participants in our study reported several forms of misalignment,
+misrepresentation, and dependence on their synthetic voices. Creating voices that align culturally and emotionally with their
+users is crucial to reinforce a sense of self and identity for AAC users.
+</p>
+						</div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+                    Voice is a central element of identity. We recognize people by their voice, and we uniquely express who we are with it. For people who rely on augmentative and alternative communication (AAC) systems, such as speech-generating devices (SGD), the device's voice becomes an identity marker others associate with them. Yet, it is hard to find a voice that truly aligns with one's identity both linguistically and culturally. Although modern AI-generated voices can reproduce diverse accents and speaking styles, AAC users still lack accessible ways to articulate how they want an identity-aligned voice to sound like. We first conducted a survey of AAC users (across eight countries) to characterize current voice representation, finding that non-binary, transgender, and non-US-born respondents rated their current voice support identity alignment consistently lower than other respondents. To examine how AAC users respond to voices designed to reflect their cultural identity, we built a tool that elicits cultural markers through guided questions and generates personalized voice candidates for participants to hear and reflect on. After participants heard the voices, we interviewed them to examine what it means for a voice to feel culturally representative, how they interpreted voices with cultural connotations, and how these voices shaped their sense of identity and agency. Our findings show that cultural voice alignment runs deeper than accent or language alone; it touches on belonging, self-recognition, and what it means to be heard as who you are.</p>
+            </div>
+        </div>
+
+
+
+        <!-- <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Video
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:56.25%;">
+                        <iframe src="https://www.youtube.com/embed/necE08bTZdM?si=5EvaZYGcb5INmsx-" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        
+
+            
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Citation
+                </h3>
+                <div class="form-group col-md-12 ">
+                    <div style=" background-color: #f1f1f1;">
+                        <code style="font-family: Consolas,'courier new';
+                        background-color: #f1f1f1;
+                        color: black;
+                        padding: 2px;
+                        ">
+                            @article{weinberg2026me,
+  title={Me, Myself, and My Voice: Exploring Cultural and Linguistic Identity in AAC AI-generated Voices},
+  author={Weinberg, Tobias and Lewis, Aaleyah and Penuela, Ricardo E Gonzalez and Hong, Weicong and Mankoff, Jennifer and Roumen, Thijs},
+  journal={arXiv preprint arXiv:2605.24337},
+  year={2026}
+}
+                        </code>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Acknowledgements
+                </h3>
+                <p class="text-justify">
+                   We thank the participants in both studies for their time and for
+sharing their experiences with us. This work was supported by the
+Center for Research and Education on Accessible Technology and
+Experiences (CREATE) at the University of Washington and the
+Rehabilitation Engineering Research Center (RERC).<br><br>
+                The website template was borrowed from <a href="http://mgharbi.com/">Michaël Gharbi</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
